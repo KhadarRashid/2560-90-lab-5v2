@@ -20,11 +20,7 @@ accessToken: 'pk.eyJ1Ijoiam9ibG9mYXJkb24iLCJhIjoiY2s3ZHo4Y2N0MDM4dTNrbzM0a3dvNm8
     ]
     
 
-    // for (let x = 0; x < bridges.length; x++){
-    //     //this accesses each part of the object and assigns it a task
-    //     let bridgeMarker= L.marker(bridges[x].coordinates).bindPopup(`${bridges[x].bridgeName}<br>Located: ${bridges[x].cityState}<br>Bridge Span(Meters):${bridges[x].span}`).addTo(map)
-    // }
-
+ // loop that runs through bridges and gets all the data needed
     bridges.forEach(function(el){
         var bridgelocation = el.coordinates
         console.log(bridgelocation)
