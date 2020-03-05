@@ -18,13 +18,7 @@ accessToken: 'pk.eyJ1Ijoiam9ibG9mYXJkb24iLCJhIjoiY2s3ZHo4Y2N0MDM4dTNrbzM0a3dvNm8
     {'bridgeName': 'George Washington Bridge', 'cityState': 'New York, NY and New Jersey, NJ', 'span': '1067', 'coordinates': [40.8517, -73.9527] },
     {'bridgeName': 'Tacoma Narrows Bridge', 'cityState':'Tacoma and Kitsap, WA', 'span': '853.44', 'coordinates': [47.269, -122.5517]},
     ]
-    
-
-    // for (let x = 0; x < bridges.length; x++){
-    //     //this accesses each part of the object and assigns it a task
-    //     let bridgeMarker= L.marker(bridges[x].coordinates).bindPopup(`${bridges[x].bridgeName}<br>Located: ${bridges[x].cityState}<br>Bridge Span(Meters):${bridges[x].span}`).addTo(map)
-    // }
-
+    // loop to run through bridges and gets the required data
     bridges.forEach(function(element){
         var bridgelocation = element.coordinates
         console.log(bridgelocation)
@@ -32,16 +26,19 @@ accessToken: 'pk.eyJ1Ijoiam9ibG9mYXJkb24iLCJhIjoiY2s3ZHo4Y2N0MDM4dTNrbzM0a3dvNm8
     })
 
 
-
+// loop that gets the bridge names
 bridges.forEach(function(element){
     var bn = element.bridgeName
     console.log(bn)
 
 })
+
+// empty lists that will pe pushed upon later
 let BridgeName=[]
 let bridgeSpan = []
 
 bridges.forEach(function(element) {
+// pushing the span and bridge names to the empty list
 BridgeName.push(element.bridgeName)
 bridgeSpan.push(element.span)
 console.log(BridgeName, bridgeSpan)
@@ -70,7 +67,7 @@ new Chart(document.getElementById("bar-chart"), {
     legend: { display: false },
     title: {
       display: true,
-      text: 'P'
+      text: 'Bridge chart'
       
     }
   }
